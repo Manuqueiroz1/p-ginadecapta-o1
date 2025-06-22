@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 IA SuperStudy - Chega de estudar no escuro. Agora você estuda com precisão.</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .yellow-text {
+            color: #fbbf24;
+        }
+        
+        .form-container {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .input-field {
+            background: rgba(55, 65, 81, 0.8);
+            border: 1px solid rgba(75, 85, 99, 0.5);
+            color: white;
+        }
+        
+        .input-field:focus {
+            border-color: #ef4444;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+        
+        .input-field::placeholder {
+            color: #9ca3af;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.6);
+        }
+        
+        .badge {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+        
+        .section-bg {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .testimonial-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .countdown-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.8); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-white min-h-screen">
+    <!-- Header -->
+    <header class="flex justify-between items-center p-6 lg:px-12">
+        <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <i class="fas fa-brain text-white text-lg"></i>
+            </div>
+            <span class="text-xl font-bold text-blue-400">SuperStudy</span>
+        </div>
+        <button class="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-full text-white font-medium transition-all duration-300">
+            <i class="fas fa-crown mr-2"></i>Entrar na Lista VIP
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="px-6 lg:px-12 py-12 lg:py-20">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-block">
+                    <span class="badge px-4 py-2 rounded-full text-white text-sm font-medium">
+                        <i class="fas fa-rocket mr-2"></i>PRÉ-LANÇAMENTO EXCLUSIVO
+                    </span>
+                </div>
+                
+                <div class="space-y-4">
+                    <h1 class="text-4xl lg:text-6xl font-black leading-tight">
+                        <i class="fas fa-map-pin text-red-500 mr-3"></i>Chega de<br>
+                        estudar no <span class="gradient-text">escuro</span>.<br>
+                        Agora você estuda<br>
+                        com <span class="yellow-text">precisão</span>.
+                    </h1>
+                    
+                    <p class="text-xl lg:text-2xl text-gray-300 leading-relaxed">
+                        A nova IA do SuperStudy revela os temas que mais caem no seu vestibular — e cria listas personalizadas em segundos.
+                    </p>
+                    
+                    <div class="space-y-4 text-lg text-gray-400">
+                        <p>Garanta seu acesso antecipado à tecnologia que vai mudar a forma de estudar no Brasil.</p>
+                        <p class="font-medium">Essa é a chance de estudar com estratégia, enquanto o resto ainda estuda no escuro.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulário VIP -->
+            <div class="floating">
+                <div class="form-container rounded-2xl p-8 max-w-md mx-auto">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">
+                            <i class="fas fa-crown text-yellow-400 mr-2"></i>Vaga VIP Gratuita
+                        </h3>
+                        <p class="text-gray-300">Seja um dos primeiros a testar</p>
+                    </div>
+                    
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Seu nome completo" class="input-field w-full px-4 py-3 rounded-lg transition-all duration-300" required>
+                        <input type="email" placeholder="Seu melhor email" class="input-field w-full px-4 py-3 rounded-lg transition-all duration-300" required>
+                        <input type="tel" placeholder="Seu WhatsApp" class="input-field w-full px-4 py-3 rounded-lg transition-all duration-300" required>
+                        <select class="input-field w-full px-4 py-3 rounded-lg transition-all duration-300" required>
+                            <option value="">Escolha seu vestibular</option>
+                            <option value="enem">ENEM</option>
+                            <option value="fuvest">FUVEST (USP)</option>
+                            <option value="unicamp">UNICAMP</option>
+                            <option value="ufrgs">UFRGS</option>
+                            <option value="uerj">UERJ</option>
+                            <option value="ufpr">UFPR</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <button type="submit" class="cta-button w-full py-4 rounded-lg text-white font-bold text-lg transition-all duration-300 pulse-glow">
+                            <i class="fas fa-crown mr-2"></i>Quero minha vaga VIP!
+                        </button>
+                    </form>
+                    
+                    <p class="text-center text-sm text-gray-400 mt-4">
+                        <i class="fas fa-shield-alt mr-1"></i>Seus dados estão protegidos. Sem spam. Sem enrolação.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oferta Exclusiva -->
+    <section class="px-6 lg:px-12 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="section-bg rounded-2xl p-8 space-y-6">
+                <h3 class="text-2xl font-bold text-white">Oferta exclusiva para a Lista VIP:</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="feature-card rounded-xl p-6 text-center">
+                        <i class="fas fa-coins text-yellow-400 text-3xl mb-4"></i>
+                        <p class="text-gray-300">Créditos gratuitos na IA SuperStudy</p>
+                    </div>
+                    <div class="feature-card rounded-xl p-6 text-center">
+                        <i class="fas fa-key text-blue-400 text-3xl mb-4"></i>
+                        <p class="text-gray-300">Convite privado antes da liberação geral</p>
+                    </div>
+                    <div class="feature-card rounded-xl p-6 text-center">
+                        <i class="fas fa-gift text-red-400 text-3xl mb-4"></i>
+                        <p class="text-gray-300">Condições especiais no lançamento</p>
+                    </div>
+                </div>
+                
+                <div class="countdown-box rounded-xl p-6">
+                    <p class="text-lg mb-4">
+                        <i class="fas fa-clock mr-2 text-yellow-400"></i>
+                        Somente no dia 30/06, depois de testar a nossa IA gratuitamente e comprovar a qualidade, você receberá a oportunidade de adquirir mais créditos por um valor promocional de lançamento!
+                    </p>
+                    <div id="countdown" class="flex justify-center space-x-4 text-center">
+                        <div class="bg-red-500 rounded-lg p-3">
+                            <div class="text-2xl font-bold" id="days">00</div>
+                            <div class="text-xs">DIAS</div>
+                        </div>
+                        <div class="bg-red-500 rounded-lg p-3">
+                            <div class="text-2xl font-bold" id="hours">00</div>
+                            <div class="text-xs">HORAS</div>
+                        </div>
+                        <div class="bg-red-500 rounded-lg p-3">
+                            <div class="text-2xl font-bold" id="minutes">00</div>
+                            <div class="text-xs">MIN</div>
+                        </div>
+                        <div class="bg-red-500 rounded-lg p-3">
+                            <div class="text-2xl font-bold" id="seconds">00</div>
+                            <div class="text-xs">SEG</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Identificação -->
+    <section class="px-6 lg:px-12 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-12">Você também sente isso?</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="feature-card rounded-xl p-6 text-left">
+                    <i class="fas fa-clock text-red-400 text-2xl mb-4"></i>
+                    <p class="text-gray-300">Estuda por horas e sente que não avança?</p>
+                </div>
+                <div class="feature-card rounded-xl p-6 text-left">
+                    <i class="fas fa-random text-red-400 text-2xl mb-4"></i>
+                    <p class="text-gray-300">Perde tempo com listas aleatórias e cronogramas genéricos?</p>
+                </div>
+                <div class="feature-card rounded-xl p-6 text-left">
+                    <i class="fas fa-exclamation-triangle text-red-400 text-2xl mb-4"></i>
+                    <p class="text-gray-300">Sente ansiedade por não saber o que focar?</p>
+                </div>
+                <div class="feature-card rounded-xl p-6 text-left">
+                    <i class="fas fa-redo text-red-400 text-2xl mb-4"></i>
+                    <p class="text-gray-300">Tem medo de repetir o que deu errado no ano passado?</p>
+                </div>
+            </div>
+            
+            <p class="text-xl font-bold mt-12 text-yellow-400">Você não está sozinho. Mas quem realmente passa faz diferente.</p>
+        </div>
+    </section>
+
+    <!-- A Tecnologia -->
+    <section class="px-6 lg:px-12 py-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                    Estude Certo. <span class="gradient-text">Acerte Mais</span>. <span class="yellow-text">Evolua de Verdade</span>.
+                </h2>
+                <p class="text-xl text-gray-300">A IA do SuperStudy te prepara como os aprovados se preparam:</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="feature-card rounded-xl p-6">
+                        <i class="fas fa-database text-blue-400 text-2xl mb-4"></i>
+                        <p class="text-gray-300">Analisa milhares de provas reais (ENEM, Fuvest, Unicamp, UFRGS…)</p>
+                    </div>
+                    <div class="feature-card rounded-xl p-6">
+                        <i class="fas fa-search text-green-400 text-2xl mb-4"></i>
+                        <p class="text-gray-300">Identifica os temas mais recorrentes e os estilos de questão que mais caem</p>
+                    </div>
+                    <div class="feature-card rounded-xl p-6">
+                        <i class="fas fa-list text-purple-400 text-2xl mb-4"></i>
+                        <p class="text-gray-300">Cria <strong>listas personalizadas</strong> para o seu vestibular</p>
+                    </div>
+                    <div class="feature-card rounded-xl p-6">
+                        <i class="fas fa-crosshairs text-red-400 text-2xl mb-4"></i>
+                        <p class="text-gray-300">Tira você do piloto automático e te coloca no controle</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="feature-card rounded-2xl p-8 inline-block">
+                        <i class="fas fa-robot text-6xl text-blue-400 mb-6"></i>
+                        <p class="text-2xl font-bold">IA SuperStudy</p>
+                        <p class="text-gray-300 mt-4">Estude com estratégia.<br>Mire no que pontua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="px-6 lg:px-12 py-16">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16">Depoimentos que mostram resultado</h2>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">VA</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Vitor Arroyo</p>
+                            <p class="text-sm text-yellow-400">Agronomia - UNESP</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"A mentoria foi muito importante pra mim, porque aprendi que só estudar não ajuda, e assim, consegui alinhar meu melhor desempenho."</p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-red-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">PM</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Paula Morandin</p>
+                            <p class="text-sm text-yellow-400">Medicina - USF</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"A forma como as reuniões semanais são conduzidas, com paciência, atenção e zelo nos detalhes, faz toda a diferença."</p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">AF</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Amanda Fuzaro</p>
+                            <p class="text-sm text-yellow-400">Medicina - UniRV</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Logo no início da Mentoria eu consegui perceber a grande diferença em relação ao meu primeiro ano. A minha rotina personalizada permitiu eu estudar muito e não ficar exausta."</p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">BP</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Beatriz Pileggi</p>
+                            <p class="text-sm text-yellow-400">Medicina - Santa Casa</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"O suporte do João Lucas faz muita diferença!"</p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">PG</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Pedro Granjeiro</p>
+                            <p class="text-sm text-yellow-400">Medicina - UFSCar</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Ter um Mentor foi fundamental para ter o maior aproveitamento com tempo que eu tinha disponível. A palavra capaz de sintetizar a Mentoria é EFICIÊNCIA."</p>
+                </div>
+                
+                <div class="testimonial-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-white font-bold">AA</span>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Alexandre Adorno</p>
+                            <p class="text-sm text-yellow-400">Medicina - FAMEMA</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">"Papo reto mesmo! Ontem usei o Focus e deu um gás absurdo para a prova. Com ele consegui lutar por cada questão e sair da prova bem menos cansado. Uso há um mês e meio e valeu cada centavo, nunca tinha visto esse efeito antes, impressionante!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por que acreditar -->
+    <section class="px-6 lg:px-12 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="section-bg rounded-2xl p-8">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6">Por que acreditar nisso?</h2>
+                <p class="text-xl text-gray-300 leading-relaxed">
+                    O SuperStudy já colaborou com a aprovação de dezenas de alunos, com estratégia, foco e método.
+                </p>
+                <p class="text-xl text-gray-300 leading-relaxed mt-4">
+                    Agora, essa experiência virou tecnologia — para que qualquer estudante possa estudar com a precisão dos que passam.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="px-6 lg:px-12 py-16">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl lg:text-4xl font-bold text-center mb-16">Como funciona (em 4 passos):</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Você escolhe o vestibular</h3>
+                    <p class="text-gray-300 text-sm">Seleciona qual prova você vai fazer</p>
+                </div>
+                
+                <div class="feature-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="font-bold mb-2">A IA analisa todas as provas anteriores</h3>
+                    <p class="text-gray-300 text-sm">Milhares de questões são processadas</p>
+                </div>
+                
+                <div class="feature-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Ela gera listas inteligentes</h3>
+                    <p class="text-gray-300 text-sm">Com base nos temas que mais caem</p>
+                </div>
+                
+                <div class="feature-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Você estuda focado</h3>
+                    <p class="text-gray-300 text-sm">Vê evolução real e economiza tempo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="px-6 lg:px-12 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="section-bg rounded-2xl p-8">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6">É a sua chance de sair na frente</h2>
+                <p class="text-xl text-gray-300 mb-8">Estude com inteligência, enquanto os outros ainda estão no escuro.</p>
+                
+                <div class="max-w-md mx-auto">
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Seu nome completo" class="input-field w-full px-4 py-3 rounded-lg transition-all duration-300" required>
+                        <input type="email" placeholder="Seu melhor email" class="input-field w-full px-4 py-3 rounded-lg transition-all duration-300" required>
+                        <input type="tel" placeholder="Seu WhatsApp" class="input-field w-full px-4 py-3 rounded-lg transition-all duration-300" required>
+                        <select class="input-field w-full px-4 py-3 rounded-lg transition-all duration-300" required>
+                            <option value="">Escolha seu vestibular</option>
+                            <option value="enem">ENEM</option>
+                            <option value="fuvest">FUVEST (USP)</option>
+                            <option value="unicamp">UNICAMP</option>
+                            <option value="ufrgs">UFRGS</option>
+                            <option value="uerj">UERJ</option>
+                            <option value="ufpr">UFPR</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <button type="submit" class="cta-button w-full py-4 rounded-lg text-white font-bold text-lg transition-all duration-300">
+                            <i class="fas fa-crown mr-2"></i>Quero garantir minha vaga VIP!
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-6 lg:px-12 py-8 border-t border-gray-700">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-brain text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold text-blue-400">SuperStudy</span>
+                </div>
+                
+                <div class="flex space-x-6 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors">Política de privacidade</a>
+                    <a href="#" class="hover:text-white transition-colors">Termos de uso</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-6 text-gray-400 text-sm">
+                <p><i class="fas fa-shield-alt mr-1"></i>Dados 100% protegidos. Nada de spam.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('2024-06-30T23:59:59');
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = '<p class="text-xl font-bold text-red-400">Oferta Expirada!</p>';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Form handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const button = this.querySelector('button[type="submit"]');
+                const originalText = button.innerHTML;
+                
+                button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    button.innerHTML = '<i class="fas fa-check mr-2"></i>Inscrição Realizada!';
+                    button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                        button.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                        this.reset();
+                    }, 3000);
+                }, 2000);
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.feature-card, .testimonial-card, .section-bg').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
